@@ -9,6 +9,9 @@ import Footer from "./scenes/Footer";
 import Landing from "./scenes/Landing";
 import MySkills from "./scenes/MySkills";
 import Contact from "./scenes/Contact";
+import AnimationRevealPage from "./helpers/AnimationRevealPage";
+import "tailwindcss/lib/css/preflight.css"
+import Pricing from "./scenes/Pricing";
 
 function App() {
   
@@ -31,7 +34,7 @@ function App() {
 
 
   return (
-    <div className="app bg-deep-blue">
+    <AnimationRevealPage>
         <Navbar 
           selectedPage={selectedPage}
           setSelectedPage={setSelectedPage}   
@@ -62,8 +65,12 @@ function App() {
         <div className="w-5/6 mx-auto md:h-full">
               <Contact />
         </div>
+        <LineGradient />
+        <div className="w-5/6 mx-auto md:h-full">
+              <Pricing />
+        </div>
         <Footer />
-    </div>
+    </AnimationRevealPage>
   );
 }
 
